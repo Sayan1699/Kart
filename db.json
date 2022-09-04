@@ -1,0 +1,32 @@
+{
+  "signupUsers": [
+    {
+      "fullname": "Sayan Ghosh",
+      "mobile": 9748998861,
+      "email": "sayankg.16@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "fullname": "Ankush Ghosh",
+      "mobile": 7003848171,
+      "email": "ankushghosh13feb@gmail.com",
+      "password": "Ankush@2001",
+      "id": 2
+    },
+    {
+      "fullname": "Keya Ghosh",
+      "mobile": 8240335981,
+      "email": "keyaghosh@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "fullname": "Malay Maity",
+      "mobile": 7438961708,
+      "email": "malay@gmail.com",
+      "password": "12345",
+      "id": 4
+    }
+  ]
+}

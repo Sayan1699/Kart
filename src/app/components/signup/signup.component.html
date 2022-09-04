@@ -1,0 +1,53 @@
+<header>
+  <div class="navbar navbar-dark bg-primary shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+          <i style="font-size:35px;" class="fas fa-shipping-fast"></i> &nbsp;
+          <strong style="font-size: 30px;">GalaxyKart</strong>
+      </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>Signup</h1>
+                  <h6>Register Yourself</h6>
+              </div>
+              <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                  <input formControlName="fullname"  type="text" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
+                  <span class="text-danger" *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('required', 'fullname')">*Fullname is required</span>
+                  <span class="text-danger" *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('minlength', 'fullname')">*Atleast 4 alphabets are required</span>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
+                  <input formControlName="mobile" type="tel" class="form-control" id="exampleInputPassword1" placeholder="Mobile Number">
+                  <span class="text-danger" *ngIf="signupForm.controls['mobile'].dirty && signupForm.hasError('required', 'mobile')">*Mobile number is required</span>
+                  <span class="text-danger" *ngIf="signupForm.controls['mobile'].dirty && signupForm.hasError('minlength', 'mobile')">*Minimum 10</span><br>
+                  <span class="text-danger" *ngIf="signupForm.controls['mobile'].dirty && signupForm.hasError('pattern', 'mobile')">*0-9 is valid</span>
+
+                </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required', 'email')">*Email Id is required</span>
+                    <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('email', 'email')">*Email Id is invalid!</span>
+
+
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required', 'password')">*Password is required</span>
+                    <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('minlength', 'password')">*Minimum 6 alphabets are required</span>
+                  </div>
+                  <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary">Signup</button>
+                </form>
+                <a routerLink="/login"> Already Registered? Click to login!</a>
+          </div>
+      </div>
+  </div>
+</div>
